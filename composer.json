@@ -1,0 +1,48 @@
+{
+    "name": "laenen/sw6-single-page-variants-plugin",
+    "description": "Single Page Variants",
+    "type": "shopware-platform-plugin",
+    "version": "1.0.0",
+    "license": "MIT",
+    "require": {
+        "shopware/core": "~6.6.0",
+        "shopware/storefront": "*"
+    },
+    "extra": {
+        "shopware-plugin-class": "Laenen\\SinglePageVariants\\LaenenSinglePageVariants",
+        "label": {
+            "de-DE": "Single Page Variants plugin",
+            "en-GB": "Single Page Variants plugin"
+        },
+        "description": {
+            "de-DE": "Dieses Plugin entfernt individuelle SEO-URLs für Varianten, zeigt nur die Hauptprodukt-URL an und lädt Varianten dynamisch per AJAX ohne Seiten-Neuladen.",
+            "en-GB": "This plugin removes individual SEO URLs for variants, shows only the main product URL, and loads variant content dynamically via AJAX without reloading."
+        },
+        "manufacturerLink": {
+            "de-DE": "https://www.kraftware.be/",
+            "en-GB": "https://www.kraftware.be/"
+        },
+        "supportLink": {
+            "de-DE": "https://www.kraftware.be/",
+            "en-GB": "https://www.kraftware.be/"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Laenen\\SinglePageVariants\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Laenen\\SinglePageVariants\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kraftware",
+            "email": "hello@kraftware.be",
+            "homepage": "https://www.kraftware.be/",
+            "role": "Contributor"
+        }
+    ]
+}
