@@ -9,7 +9,7 @@ When a user selects a variant on the product page, the plugin loads the new prod
 - Only the main (parent) product gets an SEO URL.
 - Variants no longer have their own URLs.
 - The product page updates using AJAX when switching between variants.
-- Faster and smoother experience for users.
+- Sitemap includes urls for parent pages, not for specific variant pages.
 - Avoids SEO issues with multiple URLs for similar content.
 
 ## How It Works

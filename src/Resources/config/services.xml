@@ -5,14 +5,6 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="Laenen\SinglePageVariants\Storefront\Controller\SwitchController" public="true">
-            <call method="setContainer">
-                <argument type="service" id="service_container"/>
-            </call>
-            <argument type="service"
-                      id="Shopware\Core\Content\Product\SalesChannel\FindVariant\FindProductVariantRoute"/>
-        </service>
-
         <service id="Laenen\SinglePageVariants\Core\Content\Seo\ProductMainProductSeoUrlPlaceholderHandler"
                  decorates="Shopware\Core\Content\Seo\SeoUrlPlaceholderHandlerInterface">
             <argument type="service" id=".inner"/>
@@ -22,6 +14,24 @@
         <service id="Laenen\SinglePageVariants\Core\Content\Seo\VariantProductPageSeoUrlRoute"
                  decorates="Shopware\Storefront\Framework\Seo\SeoUrlRoute\ProductPageSeoUrlRoute">
             <argument type="service" id=".inner" />
+        </service>
+
+        <service id="Laenen\SinglePageVariants\Core\Content\Sitemap\ProductUrlProvider"
+                 decorates="Shopware\Core\Content\Sitemap\Provider\ProductUrlProvider">
+            <argument type="service" id="Shopware\Core\Content\Sitemap\Service\ConfigHandler"/>
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+            <argument type="service" id="Shopware\Core\Content\Product\ProductDefinition"/>
+            <argument type="service" id="Shopware\Core\Framework\DataAbstractionLayer\Dbal\Common\IteratorFactory"/>
+            <argument type="service" id="router"/>
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
+        </service>
+
+        <service id="Laenen\SinglePageVariants\Storefront\Controller\SwitchController" public="true">
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+            <argument type="service"
+                      id="Shopware\Core\Content\Product\SalesChannel\FindVariant\FindProductVariantRoute"/>
         </service>
     </services>
 </container>
